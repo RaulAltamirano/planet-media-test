@@ -8,17 +8,33 @@ export default {
   name: 'Dashboard',
   setup() {
     const activeTab = ref('consulta');
-
-    const { notification, showNotification } = useNotificaciones();
     const {
-      tarifas, selectedTarifa, searchId, searchAttempted,
-      searchTarifa, selectTarifa, localTarifas, saveLocalTarifas
+      notification,
+      showNotification
+    } = useNotificaciones();
+    const {
+      tarifas,
+      selectedTarifa,
+      searchId,
+      searchAttempted,
+      searchTarifa,
+      selectTarifa,
+      localTarifas,
+      saveLocalTarifas
     } = useTarifas(showNotification);
 
     const {
-      newTarifa, aplicativosInput, errors,
-      saveTarifa, resetForm
-    } = useTarifaForm(tarifas, localTarifas, saveLocalTarifas, showNotification);
+      newTarifa,
+      aplicativosInput,
+      errors,
+      saveTarifa,
+      resetForm
+    } = useTarifaForm(
+      tarifas,
+      localTarifas,
+      saveLocalTarifas,
+      showNotification
+    );
 
     const { formatDate, formatCurrency } = useFormatters();
 

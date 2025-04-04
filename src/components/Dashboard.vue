@@ -1,4 +1,4 @@
-<script lang="ts" src="./dashboard.ts"/>
+<script lang="ts" src="./Dashboard.ts"/>
 
 <template>
     <div class="container mx-auto px-4 py-8">
